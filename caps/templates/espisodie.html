@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{episodie.name}}{% endblock %}
+{% block name %}{{episodie.name}}{% endblock %}
+{% block background %} {{episodie.image.url}} {% endblock %}
+{% block content %}
+
+<div class="row">
+    <div class="col-md-9 ml-auto mr-auto bg-white">
+        <!-- Title -->
+        <h2 class="title text-center" style="color: #FFD929;text-shadow: 0 0 5px #000!important">{{episodie.name}}</h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="{{episodie.image.url}}" alt="">
+            </div>
+            <div class="col-8">
+                <p>{{episodie.description}}</p>
+            </div>
+        </div>
+        <br>
+        <div class="embed-responsive embed-responsive-16by9 card shadow mb-4">
+            <iframe id="video" width="560" height="315" src="{{link1.enlase}}" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <button class="btn" onclick="document.getElementById('video').src='{{link1.enlase}}'" style=" background-color: #B39A27;"> Opción 1</button>
+                <button class="btn" onclick="document.getElementById('video').src='{{link2.enlase}}'" style=" background-color: #B39A27;">Opción 2</button>
+                <button class="btn" onclick="document.getElementById('video').src='{{link3.enlase}}'" style="background-color: #B39A27;">Ingles</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 ml-auto mr-auto">
+        <h2 class="title text-center" style="color: #FFD929;text-shadow: 0 0 5px #000!important">
+            Esucha el podcast de este episodio
+        </h2>
+        <!-- Search Widget -->
+        <iframe src="https://open.spotify.com/embed-podcast/episode/5G24CGECo6pYoTbpitjj3T" width="300" height="380"
+            frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+</div>
+
+{% endblock %}

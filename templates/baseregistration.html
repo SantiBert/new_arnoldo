@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+
+{% include 'includes/head.html' %}
+
+<body style="background-image:url({% static './assets/img/1500x500.png'%});">
+    {% include 'includes/navbar-reg.html' %}
+
+    <div class="container">
+        <div class="row card ">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+
+    <!--Js-->
+    {% include 'includes/js.html' %}
+</body>
+
+</html>

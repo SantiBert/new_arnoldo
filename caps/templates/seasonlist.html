@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{season.name}}{% endblock %}
+{% block name %}{{season.name}}{% endblock %}
+{% block background %} {{season.image.url}} {% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6 ml-auto mr-auto text-center">
+        <h1 class="title">
+            Capitulos de la {{season.name}}
+        </h1>
+    </div>
+</div>
+<div class="row">
+    {% for episodie in episodies %}
+    <div class="col-md-4">
+        <div class="card">
+            <div class="overflow">
+                <a href="{% url 'caps:episodieDetail' episodie.name|slugify %}">
+                    {% if episodie.image %}
+                    <img class="card-img-top" src="{{ episodie.image.url }}" alt="">
+                    {% else %}
+                    <img src="{% static './assets/img/unset.jpg'%}" alt="" class="card-img-top">
+                    {% endif %}
+                </a>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">{{ episodie.name }}</h4>
+                <a href="{% url 'caps:episodieDetail' episodie.name|slugify %}" class="btn btn-primary"
+                    style="background-color: #FFD929;">Ver</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

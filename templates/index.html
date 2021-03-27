@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Inicio{% endblock %}
+{% block name %}El arnoldo{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6 ml-auto mr-auto text-center">
+        <h1 class="title">
+            Algo de
+        </h1>
+    </div>
+</div>
+<div class="row">
+    {% for season in seasons %}
+    <div class="col-md-4">
+        <div class="card">
+            <div class="overflow">
+                <a href="{% url 'caps:season' season.name|slugify %}">
+                    {% if season.image %}
+                    <img class="card-img-top" src="{{ season.image.url }}" alt="">
+                    {% else %}
+                    <img src="{% static './assets/img/unset.jpg'%}" alt="" class="card-img-top">
+                    {% endif %}
+                </a>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">{{ season.name }}</h4>
+                <a href="{% url 'caps:season' season.name|slugify %}" class="btn btn-primary"
+                    style="background-color: #FFD929;">Ver</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -18,6 +18,10 @@
             </div>
         </div>
         <br>
+        {% if episodie.ordering != 1 %}
+        <a class="btn btn-primary btn-lg text-white" role="button"> Capitulo Anterior</a>
+        {% endif %}
+        <a href="#" class="btn btn-primary btn-lg text-white" role="button">Capitulo Siguiente</a>
         <div class="embed-responsive embed-responsive-16by9 card shadow mb-4">
             <iframe id="video" width="560" height="315" src="{{link1.enlase}}" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

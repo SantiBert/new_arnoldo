@@ -1,3 +1,4 @@
+import pdb
 from django.shortcuts import render
 from django.utils.timezone import activate
 from django.views.generic import View, DetailView
@@ -27,7 +28,9 @@ class EpisodieView(View):
         try:
             episodie = Episodies.objects.get(slug=slug)
             spanish = Links.objects.filter(episodie=episodie, spanish=True)
-            english = Links.objects.filter(episodie=episodie, spanish=False)
+            english = Links.objects.filter(episodie=episodie, spanish=False)            
+            next_eps = Episodies.objects.filter(is_active=True,ordering=(episodie.ordering + 1) and not 1)
+            next_ep = next_eps[0]
             link1 = spanish[0]
             link2 = spanish[1]
             link3 = english[0]
@@ -36,6 +39,8 @@ class EpisodieView(View):
             episodie = None
             spanish = None
             english = None
+            next_eps = None
+            next_ep = None
             link1 = None
             link2 = None
             link3 = None
@@ -43,6 +48,7 @@ class EpisodieView(View):
         context = {
             "episodie": episodie,
             "spanish": spanish,
+            "next_ep":next_ep,
             "link1": link1,
             "link2": link2,
             "link3": link3,

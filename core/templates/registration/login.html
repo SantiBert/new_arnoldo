@@ -3,7 +3,7 @@
 {% block title %}Iniciar sesión{% endblock %}
 {% block content %}
 {% if request.user.is_authenticated %}
-<!--script>window.location.href = '/accounts/profile/'; </script-->
+<script>window.location.href = '/administration/';</script>
 {% endif %}
 <style>
   .errorlist {
@@ -28,7 +28,7 @@
       <input type="password" name="password" required id="id_password" class="form-control" placeholder="Contraseña" />
     </p>
     <p><input type="submit" class="btn btn-primary btn-block" value="Acceder"></p>
-  </form>  
+  </form>
 </div>
 
 {% endblock %}

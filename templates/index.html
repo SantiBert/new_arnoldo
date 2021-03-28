@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Inicio{% endblock %}
-{% block name %}El arnoldo{% endblock %}
+{% block name %}Espidosdios de oye Arnold!{% endblock %}
 {% block content %}
 <div class="row">
     <div class="col-md-6 ml-auto mr-auto text-center">
         <h1 class="title">
-            Algo de
+            Todas las temporadas
         </h1>
     </div>
 </div>
@@ -17,7 +17,7 @@
             <div class="overflow">
                 <a href="{% url 'caps:season' season.name|slugify %}">
                     {% if season.image %}
-                    <img class="card-img-top" src="{{ season.image.url }}" alt="">
+                    <img class="card-img-top" src="{{ season.image.url }}" width="350px" height="400px" alt="">
                     {% else %}
                     <img src="{% static './assets/img/unset.jpg'%}" alt="" class="card-img-top">
                     {% endif %}

@@ -1,0 +1,13 @@
+{% extends 'baseregistration.html' %}
+{% block title %}Nuevo episodio{% endblock %}
+{% block content %}
+<div class="col-md-10 mx-auto mb-auto">
+    <div class="contact-title">
+        <h2 class="text-center">Nuevo episodio</h2>
+    </div>
+    <form action="" method="post" enctype='multipart/form-data'>{% csrf_token %}
+        {{form.as_p}}
+        <p><input type="submit" class="btn btn-primary btn-block" value="Crear"></p>
+    </form>
+</div>
+{% endblock %}

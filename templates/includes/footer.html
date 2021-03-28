@@ -3,36 +3,46 @@
     <div class="social-line social-line-big-icons social-line-black">
         <div class="container">
             <div class="row">
+                {% for social in socials %}
+                <!--Instagram-->
+                {% if social.name == 'Instagram' and social.link %}
                 <div class="col-md-2">
-                    <a href="#pablo" class="btn btn-outline-default btn-icon btn-footer">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </div>
-                <div class="col-md-2">
-                    <a href="#pablo" class="btn btn-outline-default btn-icon btn-footer">
-                        <i class="fab fa-facebook-square"></i>
-                    </a>
-                </div>
-                <div class="col-md-2">
-                    <a href="#pablo" class="btn btn-outline-default btn-icon btn-footer">
-                        <i class="fab fa-google-plus"></i>
-                    </a>
-                </div>
-                <div class="col-md-2">
-                    <a href="#pablo" class="btn btn-outline-default btn-icon btn-footer">
-                        <i class="fab fa-dribbble"></i>
-                    </a>
-                </div>
-                <div class="col-md-2">
-                    <a href="#pablo" class="btn btn-outline-default btn-icon btn-footer">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-                <div class="col-md-2">
-                    <a href="#pablo" class="btn btn-outline-default btn-icon btn-footer">
+                    <a target="_blank" href="{{social.link}}" class="btn btn-outline-default btn-icon btn-footer"
+                        data-original-title="Siguenos" target="_blank" data-original-title="Siguenos">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
+                <!--Facebook-->
+                {% elif social.name == 'Facebook' and social.link %}
+                <div class="col-md-2">
+                    <a href="{{social.link}}" class="btn btn-outline-default btn-icon btn-footer"
+                        data-original-title="Siguenos" target="_blank">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                </div>
+                <!--Twiter-->
+                {% elif social.name == 'Twiter' and social.link %}
+                <div class="col-md-2">
+                    <a href="{{social.link}}" class="btn btn-outline-default btn-icon btn-footer">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                <!--Youtube-->
+                {% elif social.name == 'Youtube' and social.link %}
+                <div class="col-md-2">
+                    <a href="{{social.link}}" class="btn btn-outline-default btn-icon btn-footer">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+                <!--Telegram-->
+                {% elif social.name == 'Twitch' and social.link %}
+                <div class="col-md-2">
+                    <a href="{{social.link}}" class="btn btn-outline-default btn-icon btn-footer">
+                        <i class="fab fa-twitch"></i>
+                    </a>
+                </div>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>

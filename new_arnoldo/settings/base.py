@@ -36,9 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'caps',
-    'podcast',
     'social',
+    'caps',
+
 ]
 
 MIDDLEWARE = [
@@ -115,3 +115,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGOUT_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'administration'

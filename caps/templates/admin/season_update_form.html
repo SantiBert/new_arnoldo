@@ -1,0 +1,18 @@
+{% extends 'baseregistration.html' %}
+{% block title %}Editar la temporada {{object.name}}{% endblock %}
+{% block content %}
+<div class="col-md-10 mx-auto mb-5">
+    <div class="contact-title">
+        <h2 class="text-center">Editar la temporada {{object.name}}</h2>
+    </div>
+    {% if 'ok' in request.GET %}
+    <p style="color: green;">
+        Temporada editada correctamente
+    </p>
+    {% endif %}
+    <form action="" method="post" enctype='multipart/form-data'>{% csrf_token %}
+        {{form.as_p}}
+        <p><input type="submit" class="btn btn-primary btn-block" value="Crear"></p>
+    </form>
+</div>
+{% endblock %}

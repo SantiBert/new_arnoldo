@@ -1,0 +1,16 @@
+{% extends 'baseregistration.html' %}
+{% block title %}Nuevo episodio{% endblock %}
+{% block content %}
+<div class="contact-title">
+    <h2 class="text-center">Administración</h2>
+</div>
+<div class="container d-flex justify-content-center aling-items-center h-100">
+    <div class="row">
+        {% for season in seasons %}
+        <div class="col-md-6">
+            <a href="{% url 'admin_caps:listEpisodies' season.name|slugify %}" class="btn btn-danger btn-lg" role="button">{{ season.name }}</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

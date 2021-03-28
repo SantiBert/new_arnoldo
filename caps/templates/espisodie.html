@@ -19,19 +19,25 @@
         </div>
         <br>
         {% if episodie.ordering != 1 %}
-        <a class="btn btn-primary btn-lg text-white" role="button"> Capitulo Anterior</a>
+        <a href="{% url 'caps:episodieDetail' prev_ep.name|slugify %}" class="btn btn-primary btn-lg text-white"
+            role="button"> Capitulo Anterior</a>
         {% endif %}
-        <a href="#" class="btn btn-primary btn-lg text-white" role="button">Capitulo Siguiente</a>
+        <a href="{% url 'caps:episodieDetail' next_ep.name|slugify %}" class="btn btn-primary btn-lg text-white"
+            role="button">Capitulo Siguiente</a>
         <div class="embed-responsive embed-responsive-16by9 card shadow mb-4">
-            <iframe id="video" width="560" height="315" src="{{link1.enlase}}" frameborder="0"
+            <iframe id="video" width="560" height="315" src="{{episodie.link1}}" title="YouTube video player"
+                frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
         </div>
         <div class="row">
             <div class="col-md-10">
-                <button class="btn" onclick="document.getElementById('video').src='{{link1.enlase}}'" style=" background-color: #B39A27;"> Opción 1</button>
-                <button class="btn" onclick="document.getElementById('video').src='{{link2.enlase}}'" style=" background-color: #B39A27;">Opción 2</button>
-                <button class="btn" onclick="document.getElementById('video').src='{{link3.enlase}}'" style="background-color: #B39A27;">Ingles</button>
+                <button class="btn" onclick="document.getElementById('video').src='{{ episodie.link1 }}'"
+                    style=" background-color: #B39A27;"> Opción 1</button>
+                <button class="btn" onclick="document.getElementById('video').src='{{ episodie.link2 }}'"
+                    style=" background-color: #B39A27;">Opción 2</button>
+                <button class="btn" onclick="document.getElementById('video').src='{{ episodie.english }}'"
+                    style="background-color: #B39A27;">Ingles</button>
             </div>
         </div>
     </div>
@@ -41,8 +47,8 @@
             Esucha el podcast de este episodio
         </h2>
         <!-- Search Widget -->
-        <iframe src="https://open.spotify.com/embed-podcast/episode/5G24CGECo6pYoTbpitjj3T" width="300" height="380"
-            frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe src="{{ episodie.spoty }}" width="300" height="380" frameborder="0" allowtransparency="true"
+            allow="encrypted-media"></iframe>
     </div>
 </div>
 

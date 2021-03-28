@@ -2,7 +2,7 @@ from django import forms
 from django.db import models
 from django.db.models import fields
 from django.forms import widgets
-from .models import Season, Episodies, Links
+from .models import Season, Episodies
 
 
 class SeasonForm(forms.ModelForm):
@@ -21,18 +21,16 @@ class SeasonForm(forms.ModelForm):
 class EpisodieForm(forms.ModelForm):
     class Meta:
         model = Episodies
-        fields = ['name', 'description', 'image', 'ordering', 'season']
+        fields = ['name', 'description', 'image', 'ordering',
+                  'season', 'link1', 'link2', 'english', 'spoty']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre'}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Descripción'}),
-
+            'link1': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Link en español'}),
+            'link2': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Link en español 2'}),
+            'english': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Link en ingles'}),
+            'spoty': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Link de Spotify'}),
         }
         labels = {
-            'name': '', 'description': '', 'image': 'Imagen de referencia', 'ordering': '', 'season': ''
+            'name': '', 'description': '', 'image': 'Imagen de referencia', 'ordering': '', 'season': '', 'link1': '', 'link2': '', 'english': '', 'spoty': ''
         }
-
-
-class LinkForm(forms.ModelForm):
-    class Meta:
-        model = Links
-        fields = ['enlase', 'episodie', 'spanish']

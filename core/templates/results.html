@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}{{season.name}}{% endblock %}
-{% block name %}{{season.name}}{% endblock %}
-{% block background %} {{season.image.url}} {% endblock %}
+{% block title %}Resultados de la búsqueda{% endblock %}
+{% block name %}Resultados de la búsqueda{% endblock %}
+{% block background %} {% static './assets/img/search.png' %} {% endblock %}
 {% block content %}
 <div class="row">
     <div class="col-md-6 ml-auto mr-auto text-center">
         <h1 class="title">
-            Capitulos de la {{season.name}}
+            Resultados de la búsqueda
         </h1>
     </div>
 </div>

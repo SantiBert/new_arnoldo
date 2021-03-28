@@ -1,0 +1,42 @@
+{% extends 'baseregistration.html' %}
+{% block title %}Lista de episodios de {{season.name}}{% endblock %}
+{% block content %}
+<div class="epispdiet-title">
+    <h2 class="text-center">Lista de episodios de {{season.name}}</h2>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-center">#</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Número de episodio</th>
+            <th class="text-right">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for epispdie in episodies %}
+        <tr>
+            <td class="text-center">{{ forloop.counter }}</td>
+            <td>{{ epispdie.name }}</td>
+            <td>{{epispdie.description |truncatechars:"80"}}</td>
+            <td>{{ epispdie.ordering }}</td>
+            <td class="td-actions text-right">
+                <a type="button" rel="tooltip" href="{% url 'admin_caps:updateEpisodie' epispdie.id %}"
+                    class="btn btn-success btn-icon btn-sm " data-original-title="" title="">
+                    <i class="now-ui-icons ui-1_settings-gear-63"></i>
+                </a>
+                <a type="button" rel="tooltip" href="#" class="btn btn-danger btn-icon btn-sm " data-original-title=""
+                    title="">
+                    <i class="now-ui-icons ui-1_simple-remove"></i>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'admin_caps:createEpisodie' %}" class="btn btn-danger btn-lg">Nuevo epispdieto</a>
+<a href="{% url 'admin_caps:updateSeason' season.id %}" class="btn btn-danger btn-lg">Editar temporada</a>
+
+{% endblock %}

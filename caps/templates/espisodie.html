@@ -41,6 +41,9 @@
                 {% if episodie.english %}
                 <button class="btn" onclick="document.getElementById('video').src='{{ episodie.english }}'" style="background-color: #B39A27;">Ingles</button>
                 {% endif %}
+                {% if episodie.mediafire %}
+                <a href={{ episodie.mediafire }} class="btn" role="button" style="background-color: #B39A27;">Descargar</a>
+                {% endif %}
             </div>
         </div>
     </div>

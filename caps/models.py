@@ -32,10 +32,13 @@ class Episodies(models.Model):
     ordering = models.PositiveSmallIntegerField(
         'Número de capitulo', default=0)
     description = models.TextField(null=True, blank=True)
-    link1 = models.URLField('Link 1', max_length=150, null=True, blank=True)
-    link2 = models.URLField('Link 2', max_length=150, null=True, blank=True)
-    english = models.URLField('English', max_length=150, null=True, blank=True)
-    spoty = models.URLField('Spotify', max_length=150, null=True, blank=True)
+    link1 = models.URLField('Link 1', max_length=1300, null=True, blank=True)
+    link2 = models.URLField('Link 2', max_length=1300, null=True, blank=True)
+    english = models.URLField(
+        'English', max_length=1300, null=True, blank=True)
+    spoty = models.URLField('Spotify', max_length=1300, null=True, blank=True)
+    mediafire = models.URLField(
+        'Mediafire', max_length=1300, null=True, blank=True)
     image = models.ImageField(
         upload_to='Episodie/', default='logoarnoldo.png', null=True, blank=True)
     date = models.DateTimeField(default=timezone.now)

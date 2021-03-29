@@ -30,7 +30,8 @@ class EpisodieForm(forms.ModelForm):
             'link2': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Link en español 2'}),
             'english': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Link en ingles'}),
             'spoty': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Link de Spotify'}),
+            'mediafire': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Link de Mediafire'})
         }
         labels = {
-            'name': '', 'description': '', 'image': 'Imagen de referencia', 'ordering': '', 'season': '', 'link1': '', 'link2': '', 'english': '', 'spoty': ''
+            'name': '', 'description': '', 'image': 'Imagen de referencia', 'ordering': '', 'season': '', 'link1': 'Link en español', 'link2': 'Link en español 2', 'english': 'Link en ingles', 'spoty': 'Link de Spotify', 'mediafire': 'Link de descarga a mediafire'
         }

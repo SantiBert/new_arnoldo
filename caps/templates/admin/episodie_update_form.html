@@ -1,9 +1,9 @@
 {% extends 'baseregistration.html' %}
-{% block title %}Nuevo episodio{% endblock %}
+{% block title %}Editar {{object.name}}{% endblock %}
 {% block content %}
 <div class="col-md-10 mx-auto mb-auto">
     <div class="contact-title">
-        <h2 class="text-center">Nuevo episodio</h2>
+        <h2 class="text-center">Editar {{object.name}}</h2>
     </div>
     {% if 'ok' in request.GET %}
     <p style="color: green;">

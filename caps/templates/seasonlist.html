@@ -26,7 +26,7 @@
                 </a>
             </div>
             <div class="card-body">
-                <h4 class="card-title">{{ episodie.name }}</h4>
+                <h4 class="card-title"> {{ forloop.counter }}){{ episodie.name }}</h4>
                 <a href="{% url 'caps:episodieDetail' episodie.name|slugify %}" class="btn btn-primary"
                     style="background-color: #FFD929;">Ver</a>
             </div>

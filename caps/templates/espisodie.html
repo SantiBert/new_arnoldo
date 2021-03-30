@@ -17,7 +17,7 @@
                 <p>{{episodie.description}}</p>
             </div>
         </div>
-        <br>
+        <br>        
         {% if episodie.ordering != 1 %}
         <a href="{% url 'caps:episodieDetail' prev_ep.name|slugify %}" class="btn btn-primary btn-lg text-white"
             role="button"> Capitulo Anterior</a>
@@ -44,6 +44,7 @@
                 {% if episodie.mediafire %}
                 <a href={{ episodie.mediafire }} class="btn" role="button" style="background-color: #B39A27;">Descargar</a>
                 {% endif %}
+                <a href={% url 'caps:season' episodie.season|slugify %} class="btn" role="button" style="background-color: #B39A27;">Volver a la temporada {{episodie.season}}</a>
             </div>
         </div>
     </div>

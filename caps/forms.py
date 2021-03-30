@@ -8,13 +8,13 @@ from .models import Season, Episodies
 class SeasonForm(forms.ModelForm):
     class Meta:
         model = Season
-        fields = ['name', 'description', 'image']
+        fields = ['name', 'description', 'image', 'banner']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre'}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Descripción'}),
         }
         labels = {
-            'name': '', 'description': '', 'image': 'Imagen de referencia'
+            'name': '', 'description': '', 'image': 'Imagen de referencia', 'banner': 'Imagen de banner'
         }
 
 

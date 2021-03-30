@@ -15,6 +15,7 @@ class Season(models.Model):
     slug = AutoSlugField(populate_from='name')
     image = models.ImageField(
         upload_to='Season/', default='logoarnoldo.png', null=True, blank=True)
+    banner = models.ImageField(upload_to='Season/', null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     date = models.DateTimeField(default=timezone.now)
     is_active = models.BooleanField(default=True)

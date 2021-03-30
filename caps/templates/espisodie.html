@@ -20,10 +20,10 @@
         <br>        
         {% if episodie.ordering != 1 %}
         <a href="{% url 'caps:episodieDetail' prev_ep.name|slugify %}" class="btn btn-primary btn-lg text-white"
-            role="button"> Capitulo Anterior</a>
+            role="button"> Capítulo Anterior</a>
         {% endif %}
         <a href="{% url 'caps:episodieDetail' next_ep.name|slugify %}" class="btn btn-primary btn-lg text-white"
-            role="button">Capitulo Siguiente</a>
+            role="button"> Capítulo Siguiente</a>
         <div class="embed-responsive embed-responsive-16by9 card shadow mb-4">
             <iframe id="video" width="560" height="315" src="{{episodie.link1}}" title=""
                 frameborder="0"

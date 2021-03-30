@@ -99,12 +99,9 @@ class EpisodieUpdateView(UpdateView):
     form_class = EpisodieForm
     template_name = 'admin/episodie_update_form.html'
     template_name_suffix = '_update_form'
-    success_url = reverse_lazy('administration')
 
-    """
     def get_success_url(self):
-        return reverse_lazy('updateEpisodie', args=[self.object.id]) + '?ok'
-    """
+        return reverse_lazy('admin_caps:updateEpisodie', args=[self.object.id]) + '?ok'
 
 
 @method_decorator(login_required, name='dispatch')

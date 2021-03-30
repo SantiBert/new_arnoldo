@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}{{episodie.name}}{% endblock %}
 {% block name %}{{episodie.name}}{% endblock %}
-{% block background %} {{episodie.banner.url}} {% endblock %}
+{% block background %} {{episodie.image.url}} {% endblock %}
 {% block content %}
 
 <div class="row">
@@ -61,7 +61,10 @@
             Este episodio aún no tiene un podcast dedicado :(
         </h4>
         {% endif %}
+        <a class="twitter-timeline" data-lang="es" data-width="300" data-height="600" href="https://twitter.com/arnoldopodcast?ref_src=twsrc%5Etfw">Tweets by arnoldopodcast</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
+
 </div>
+
 
 {% endblock %}

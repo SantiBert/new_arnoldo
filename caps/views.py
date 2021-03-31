@@ -85,6 +85,7 @@ class ListSeasonAdminView(ListView):
     model = Season
     template_name = 'admin/seasons_admin_list.html'
     context_object_name = 'seasons'
+    ordering = 'ordering'
 
 
 @method_decorator(login_required, name='dispatch')

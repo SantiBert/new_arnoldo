@@ -16,7 +16,8 @@ class SeasonView(View):
         try:
             socials = Social.objects.all()
             season = Season.objects.get(slug=slug)
-            episodies = Episodies.objects.filter(season__name=season.name)
+            episodies = Episodies.objects.filter(
+                season__name=season.name).order_by('ordering')
         except:
             season = None
             episodies = None

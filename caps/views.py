@@ -110,7 +110,8 @@ class ListEpisodieAdminView(View):
     def get(self, request, slug, *args, **kwargs):
         try:
             season = Season.objects.get(slug=slug)
-            episodies = Episodies.objects.filter(season__name=season.name)
+            episodies = Episodies.objects.filter(
+                season__name=season.name).order_by('ordering')
         except:
             season = None
             episodies = None

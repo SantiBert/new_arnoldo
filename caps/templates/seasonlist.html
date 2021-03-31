@@ -7,7 +7,11 @@
 <div class="row">
     <div class="col-md-6 ml-auto mr-auto text-center">
         <h1 class="title">
+            {% if season.name != 'Películas' %}
             Capitulos de la {{season.name}}
+            {% else %}
+            Películas & especiales de Oye Arnold
+            {% endif %}
         </h1>
     </div>
 </div>

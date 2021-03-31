@@ -40,6 +40,8 @@ class EpisodieView(View):
             number_s = episodie.ordering - 1
             if number_s == 0:
                 number_s = 1
+            if number_n > 102:
+                number_n = 102
             next_ep = Episodies.objects.get(ordering=number_n)
             prev_ep = Episodies.objects.get(ordering=number_s)
             socials = Social.objects.all()

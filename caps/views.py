@@ -75,9 +75,7 @@ class SeasonUpdateView(UpdateView):
     form_class = SeasonForm
     template_name = 'admin/season_update_form.html'
     template_name_suffix = '_update_form'
-
-    def get_success_url(self):
-        return reverse_lazy('admin_caps:updateSeason', args=[self.object.id]) + '?ok'
+    success_url = reverse_lazy('administration')
 
 
 @method_decorator(login_required, name='dispatch')

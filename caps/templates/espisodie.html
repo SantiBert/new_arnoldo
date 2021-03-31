@@ -43,7 +43,7 @@
                 {% if episodie.mediafire %}
                 <a href={{ episodie.mediafire }} target="_blank" class="btn" role="button" style="background-color: #B39A27;">Descargar</a>
                 {% endif %}
-                <a href={% url 'caps:season' episodie.season|slugify %} class="btn" role="button" style="background-color: #B39A27;">Volver a la temporada {{episodie.season}}</a>
+                <a href={% url 'caps:season' episodie.season.slug %} class="btn" role="button" style="background-color: #B39A27;">Volver a la temporada {{episodie.season}}</a>
             </div>
         </div>
     </div>

@@ -33,6 +33,6 @@
 </table>
 
 <a href="{% url 'admin_caps:createEpisodie' %}" class="btn btn-danger btn-lg">Nuevo epispdieto</a>
-<a href="{% url 'admin_caps:updateSeason' season.id %}" class="btn btn-danger btn-lg">Editar temporada</a>
+<a href="{% url 'admin_caps:updateSeason' season.slug %}" class="btn btn-danger btn-lg">Editar temporada</a>
 
 {% endblock %}

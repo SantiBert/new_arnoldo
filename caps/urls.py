@@ -20,7 +20,7 @@ caps_admin_patterns = ([
     path('season/create/', CreateSeasonView.as_view(), name='createSeason'),
     path('season/list/', ListSeasonAdminView.as_view(), name='listSeason'),
     path('<str:slug>/list/', ListEpisodieAdminView.as_view(), name='listEpisodies'),
-    path('season/update/<int:pk>/',
+    path('season/update/<slug:slug>/',
          SeasonUpdateView.as_view(), name='updateSeason'),
     path('episodie/update/<int:pk>/',
          EpisodieUpdateView.as_view(), name='updateEpisodie')

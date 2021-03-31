@@ -8,7 +8,7 @@
     {% if 'ok' in request.GET %}
     <p style="color: green;">
         Episodio editada correctamente
-        <a href="{% url 'caps:episodieDetail' object.name|slugify %}">Haz click aqui para ir al episodio editado</a>
+        <a href="{% url 'caps:episodieDetail' object.slug %}">Haz click aqui para ir al episodio editado</a>
     </p>
     {% endif %}
     <form action="" method="post" enctype='multipart/form-data'>{% csrf_token %}

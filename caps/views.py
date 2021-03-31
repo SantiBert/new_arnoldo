@@ -35,6 +35,7 @@ class EpisodieView(View):
     def get(self, request, slug, *args, **kwargs):
         try:
             episodie = Episodies.objects.get(slug=slug)
+            season = episodie.season
             number_n = episodie.ordering + 1
             number_s = episodie.ordering - 1
             if number_s == 0:
@@ -43,6 +44,7 @@ class EpisodieView(View):
             prev_ep = Episodies.objects.get(ordering=number_s)
             socials = Social.objects.all()
         except:
+            season = None
             episodie = None
             number_n = None
             number_s = None
@@ -54,6 +56,7 @@ class EpisodieView(View):
             "next_ep": next_ep,
             "prev_ep": prev_ep,
             "socials": socials,
+            "season": season
         }
         return render(request, 'espisodie.html', context)
 

@@ -8,8 +8,7 @@
     <div class="row">
         {% for season in seasons %}
         <div class="col-md-6">
-            <a href="{% url 'admin_caps:listEpisodies' season.slug %}" class="btn btn-danger btn-lg" role="button">{{
-                season.name }}</a>
+            <a href="{% url 'admin_caps:listEpisodies' season.slug %}" class="btn btn-danger btn-lg" role="button">{{season.name }}</a>
         </div>
         {% endfor %}
     </div>

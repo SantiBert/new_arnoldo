@@ -12,9 +12,11 @@ def get_upload_caps_path(instance, filename):
 class Season(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=150, null=True, blank=True)
-    slug = AutoSlugField(populate_from='name')
+    slug = models.CharField(max_length=150, null=True, blank=True)
     image = models.ImageField(
         upload_to='Season/', default='logoarnoldo.png', null=True, blank=True)
+    ordering = models.PositiveSmallIntegerField(
+        'Número de capitulo', default=0, null=True, blank=True)
     banner = models.ImageField(upload_to='Season/', null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     date = models.DateTimeField(default=timezone.now)

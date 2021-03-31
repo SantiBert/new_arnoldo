@@ -13,7 +13,8 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['seasons'] = Season.objects.filter(is_active=True)
+        context['seasons'] = Season.objects.filter(
+            is_active=True).order_by('ordering')
         context['socials'] = Social.objects.all()
         return context
 

@@ -10,6 +10,8 @@ from .models import Season, Episodies
 from social.models import Social
 from .forms import SeasonForm, EpisodieForm
 
+# Vista para las Temporadas para el usuario
+
 
 class SeasonView(View):
     def get(self, request, slug, *args, **kwargs):
@@ -29,6 +31,8 @@ class SeasonView(View):
         }
 
         return render(request, 'seasonlist.html', context)
+
+# Vista para los episodios (filtrados por temporada) para el usuario
 
 
 class EpisodieView(View):
@@ -62,7 +66,7 @@ class EpisodieView(View):
         }
         return render(request, 'espisodie.html', context)
 
-
+# Vista para crear una temporada para el administrador
 @method_decorator(login_required, name='dispatch')
 class CreateSeasonView(CreateView):
     model = Season
@@ -71,15 +75,16 @@ class CreateSeasonView(CreateView):
     success_url = reverse_lazy('administration')
 
 
+# Vista para editar una temporada para el administrador
 @method_decorator(login_required, name='dispatch')
 class SeasonUpdateView(UpdateView):
     model = Season
     form_class = SeasonForm
     template_name = 'admin/season_update_form.html'
     template_name_suffix = '_update_form'
-    success_url = reverse_lazy('administration')
+    success_url = reverse_lazy('admin_caps:listSeason')
 
-
+#
 @method_decorator(login_required, name='dispatch')
 class ListSeasonAdminView(ListView):
     model = Season

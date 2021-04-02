@@ -6,13 +6,11 @@
 {% block content %}
 <div class="row">
     <div class="col-md-6 ml-auto mr-auto text-center">
-        <h1 class="title">
-            {% if season.name != 'Películas' %}
-            Capitulos de la {{season.name}}
-            {% else %}
-            Películas & especiales de Oye Arnold
+        <p id="season" class="title">
+            {% if season.description %}
+            {{season.description|safe}}
             {% endif %}
-        </h1>
+        </p>
     </div>
 </div>
 <div class="row">

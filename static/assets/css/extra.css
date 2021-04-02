@@ -5,8 +5,10 @@
     font-size: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
+
 *{
-    font-family: 'arnorg';    
+    font-family: 'arnorg';  
     
 }
 .card-body {
@@ -32,4 +34,12 @@
 
 .footer .social-line i:hover {
     color: #FFD929;
+}
+
+#episodie p {
+    font-family: 'Montserrat', sans-serif;  
+}
+
+#season p{
+    font-family: 'Montserrat', sans-serif;  
 }

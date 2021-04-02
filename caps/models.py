@@ -4,6 +4,7 @@ from autoslug import AutoSlugField
 from django.utils import timezone
 from django.conf import settings
 
+from taggit.managers import TaggableManager
 
 def get_upload_caps_path(instance, filename):
     return '/'.join([settings.FILES_PATH, "caps", str(instance.caps.id), filename])
@@ -35,6 +36,7 @@ class Episodies(models.Model):
     ordering = models.PositiveSmallIntegerField(
         'Número de capitulo', default=0)
     description = models.TextField(null=True, blank=True)
+    tags = TaggableManager(blank=True)
     link1 = models.URLField('Link 1', max_length=1300, null=True, blank=True)
     link2 = models.URLField('Link 2', max_length=1300, null=True, blank=True)
     english = models.URLField(

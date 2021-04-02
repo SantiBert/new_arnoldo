@@ -8,11 +8,13 @@ from .views import (SeasonView,
                     ListEpisodieAdminView,
                     SeasonUpdateView,
                     EpisodieUpdateView,
+                    SearchTagView,
                     )
 
 caps_patterns = ([
     path('season/<str:slug>/', SeasonView.as_view(), name='season'),
     path('episodie/<slug:slug>/', EpisodieView.as_view(), name='episodieDetail'),
+    path('tags/results/<str:tag>/', SearchTagView.as_view(), name='tagResult'),
 ], 'caps')
 
 caps_admin_patterns = ([

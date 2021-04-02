@@ -5,6 +5,7 @@ from django.views.generic import View, CreateView, ListView, UpdateView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.urls import reverse_lazy
+from django.db.models import Q
 
 from .models import Season, Episodies
 from social.models import Social
@@ -129,3 +130,21 @@ class ListEpisodieAdminView(View):
         }
 
         return render(request, 'admin/episodies_admin_list.html', context)
+
+class SearchTagView(View):
+    def get(self, request, tag, *args, **kwargs):
+        queryset = tag
+        socials = Social.objects.all()
+        seasons = Season.objects.filter(is_active=True)
+        if queryset:
+            episodies = Episodies.objects.filter(
+                Q(name__icontains=queryset) |
+                Q(description__icontains=queryset),
+                is_active=True
+            ).distinct().order_by('ordering')
+        context = {
+            "episodies": episodies,
+            "tag":queryset,
+        }
+
+        return render(request, 'tagresult.html', context)

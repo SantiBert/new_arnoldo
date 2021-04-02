@@ -2,6 +2,7 @@ from django import forms
 from django.db import models
 from django.db.models import fields
 from django.forms import widgets
+from taggit.forms import TagWidget
 from .models import Season, Episodies
 
 
@@ -22,7 +23,7 @@ class EpisodieForm(forms.ModelForm):
     class Meta:
         model = Episodies
         fields = ['name', 'description', 'image', 'ordering',
-                  'season', 'link1', 'link2', 'english', 'spoty']
+                  'season', 'link1', 'link2', 'english', 'spoty', 'tags']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre'}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Descripción'}),
@@ -30,8 +31,9 @@ class EpisodieForm(forms.ModelForm):
             'link2': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Link en español 2'}),
             'english': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Link en inglés '}),
             'spoty': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Link de Spotify'}),
-            'mediafire': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Link de Mediafire'})
+            'mediafire': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Link de Mediafire'}),
+            'tags': TagWidget(attrs={'class': 'form-control', 'type': 'text', 'value': '', 'data-role': 'tagsinput', 'id': 'tags', 'placeholder': 'Una lista de etiquetas separadas por coma.'}),
         }
         labels = {
-            'name': '', 'description': '', 'image': 'Imagen de referencia', 'ordering': '', 'season': '', 'link1': 'Link en español', 'link2': 'Link en español 2', 'english': 'Link en inglés ', 'spoty': 'Link de Spotify', 'mediafire': 'Link de descarga a mediafire'
+            'name': '', 'description': '', 'image': 'Imagen de referencia', 'ordering': '', 'season': '', 'link1': 'Link en español', 'link2': 'Link en español 2', 'english': 'Link en inglés ', 'spoty': 'Link de Spotify', 'mediafire': 'Link de descarga a mediafire',  'tags': 'Tags',
         }

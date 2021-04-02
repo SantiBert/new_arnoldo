@@ -4,15 +4,15 @@
 {% block name %}{{season.name}}{% endblock %}
 {% block background %}{{season.banner.url}} {% endblock %}
 {% block content %}
+{% if season.description %}
 <div class="row">
-    <div class="col-md-6 ml-auto mr-auto text-center">
-        <p id="season" class="title">
-            {% if season.description %}
-            {{season.description|safe}}
-            {% endif %}
+    <div class="col-md-12 ml-auto mr-auto text-center">
+        <p id="season" class="title">            
+            {{season.description|safe}}            
         </p>
     </div>
 </div>
+{% endif %}
 <div class="row">
     {% for episodie in episodies %}
     <div class="col-md-4">

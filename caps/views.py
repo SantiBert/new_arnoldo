@@ -137,11 +137,7 @@ class SearchTagView(View):
         socials = Social.objects.all()
         seasons = Season.objects.filter(is_active=True)
         if queryset:
-            episodies = Episodies.objects.filter(
-                Q(name__icontains=queryset) |
-                Q(description__icontains=queryset),
-                is_active=True
-            ).distinct().order_by('ordering')
+            episodies = Episodies.objects.filter(tags__name__in=[tag],is_active=True).distinct().order_by('ordering')
         context = {
             "episodies": episodies,
             "tag":queryset,

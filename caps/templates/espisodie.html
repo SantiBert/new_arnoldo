@@ -5,14 +5,14 @@
 {% block background %} {{episodie.image.url}} {% endblock %}
 {% block arrows %}
 {% if episodie.ordering != 1 %}
-<a href="{% url 'caps:episodieDetail' prev_ep.slug %}" class="carousel-control-prev" style="font-size: large;"
-    role="button" data-slide="prev">
+<a id="arrow" href="{% url 'caps:episodieDetail' prev_ep.slug %}" class="carousel-control-prev"
+    style="font-size: large;" role="button" data-slide="prev">
     <i class="now-ui-icons arrows-1_minimal-left"></i>Capítulo Anterior
 </a>
 {% endif %}
 {% if episodie.ordering != 102 %}
-<a href="{% url 'caps:episodieDetail' next_ep.slug %}" class="carousel-control-next" style="font-size: large;"
-    role="button" data-slide="next">
+<a id="arrow" href="{% url 'caps:episodieDetail' next_ep.slug %}" class="carousel-control-next"
+    style="font-size: large;" role="button" data-slide="next">
     Capítulo Siguiente
     <i class="now-ui-icons arrows-1_minimal-right"></i>
 </a>

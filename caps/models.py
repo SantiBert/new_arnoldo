@@ -3,8 +3,10 @@ from django.db import models
 from autoslug import AutoSlugField
 from django.utils import timezone
 from django.conf import settings
+from ckeditor.fields import RichTextField
 
 from taggit.managers import TaggableManager
+
 
 def get_upload_caps_path(instance, filename):
     return '/'.join([settings.FILES_PATH, "caps", str(instance.caps.id), filename])
@@ -19,7 +21,7 @@ class Season(models.Model):
     ordering = models.PositiveSmallIntegerField(
         'Número de capitulo', default=0, null=True, blank=True)
     banner = models.ImageField(upload_to='Season/', null=True, blank=True)
-    description = models.TextField(null=True, blank=True)
+    description = RichTextField(null=True, blank=True)
     date = models.DateTimeField(default=timezone.now)
     is_active = models.BooleanField(default=True)
 
@@ -35,7 +37,7 @@ class Episodies(models.Model):
         Season, on_delete=models.PROTECT)
     ordering = models.PositiveSmallIntegerField(
         'Número de capitulo', default=0)
-    description = models.TextField(null=True, blank=True)
+    description = RichTextField(null=True, blank=True)
     tags = TaggableManager(blank=True)
     link1 = models.URLField('Link 1', max_length=1300, null=True, blank=True)
     link2 = models.URLField('Link 2', max_length=1300, null=True, blank=True)

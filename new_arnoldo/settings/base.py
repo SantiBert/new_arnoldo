@@ -36,9 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
     'social',
     'caps',
     'taggit',
+    'import_export',
 
 ]
 
@@ -91,6 +93,30 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Image', ],
+            ['Link', 'Unlink'],
+            ['Undo', 'Redo'],
+            ['Iframe'],
+            '/',
+            ['Bold', 'Italic', 'Underline', 'Blockquote'],
+            ['clipboard', 'undo'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
+                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Cut', 'Copy', 'Paste', 'PasteText',
+                'PasteFromWord'],
+            ['RemoveFormat', 'SelectAll', '-', 'Scayt'],
+            '/',
+            ['Styles', 'Format', 'Font', 'FontSize'],
+            ['TextColor', 'BGColor'],
+            ['Maximize', 'ShowBlocks'],
+        ]
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/

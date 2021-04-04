@@ -1,6 +1,10 @@
 {% extends 'baseregistration.html' %}
 {% block title %}Editar {{object.name}}{% endblock %}
 {% block content %}
+{% block ExtraCss %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.j's %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+{% endblock ExtraCss %}
 <div class="col-md-10 mx-auto mb-auto">
     <div class="contact-title">
         <h2 class="text-center">Editar {{object.name}}</h2>
@@ -16,5 +20,6 @@
         <p><input type="submit" class="btn btn-primary btn-block" value="Editar"></p>
     </form>
 </div>
-<a href="{% url 'admin_caps:listEpisodies' object.season.slug %}" class="btn btn-danger btn-lg">Volver a la temporada {{object.season}}</a>
+<a href="{% url 'admin_caps:listEpisodies' object.season.slug %}" class="btn btn-danger btn-lg">Volver a la temporada
+    {{object.season}}</a>
 {% endblock %}

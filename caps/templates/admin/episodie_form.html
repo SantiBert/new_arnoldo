@@ -1,6 +1,10 @@
 {% extends 'baseregistration.html' %}
 {% block title %}Nuevo episodio{% endblock %}
 {% block content %}
+{% block ExtraCss %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.j's %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+{% endblock ExtraCss %}
 <div class="col-md-10 mx-auto mb-auto">
     <div class="contact-title">
         <h2 class="text-center">Nuevo episodio</h2>

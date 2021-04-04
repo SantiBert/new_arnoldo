@@ -43,3 +43,11 @@
 #season {
     font-family: 'Montserrat', sans-serif;  
 }
+
+#arrow {
+    color:white; 
+}
+
+#arrow:hover {
+    color: #FFD929 !important;
+}

@@ -13,21 +13,22 @@
                 <img src="{{episodie.image.url}}" alt="">
             </div>
             <div class="col-8">
-                <p>{{episodie.description}}</p>
+                <div style="color:black;">
+                    {{season.description|safe}}
+                </div>
             </div>
         </div>
-        <br>        
+        <br>
         {% if episodie.ordering != 1 %}
-        <a href="{% url 'caps:episodieDetail' prev_ep.slug %}" class="btn btn-primary btn-lg text-white"
-            role="button"> Capítulo Anterior</a>
+        <a href="{% url 'caps:episodieDetail' prev_ep.slug %}" class="btn btn-primary btn-lg text-white" role="button">
+            Capítulo Anterior</a>
         {% endif %}
         {% if episodie.ordering != 102 %}
-        <a href="{% url 'caps:episodieDetail' next_ep.slug %}" class="btn btn-primary btn-lg text-white"
-            role="button"> Capítulo Siguiente</a>
+        <a href="{% url 'caps:episodieDetail' next_ep.slug %}" class="btn btn-primary btn-lg text-white" role="button">
+            Capítulo Siguiente</a>
         {% endif %}
         <div class="embed-responsive embed-responsive-16by9 card shadow mb-4">
-            <iframe id="video" width="560" height="315" src="{{episodie.link1}}" title=""
-                frameborder="0"
+            <iframe id="video" width="560" height="315" src="{{episodie.link1}}" title="" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
         </div>
@@ -35,28 +36,36 @@
             <div class="row justify-content-end">
                 <div class="col-md-12">
                     {% if episodie.link1 %}
-                    <button class="btn" role="button" onclick="document.getElementById('video').src='{{ episodie.link1 }}'" style=" background-color: #B39A27;"> Opción 1</button>
+                    <button class="btn" role="button"
+                        onclick="document.getElementById('video').src='{{ episodie.link1 }}'"
+                        style=" background-color: #B39A27;"> Opción 1</button>
                     {% endif %}
                     {% if episodie.link2 %}
-                    <button class="btn" role="button" onclick="document.getElementById('video').src='{{ episodie.link2 }}'" style=" background-color: #B39A27;">Opción 2</button>
+                    <button class="btn" role="button"
+                        onclick="document.getElementById('video').src='{{ episodie.link2 }}'"
+                        style=" background-color: #B39A27;">Opción 2</button>
                     {% endif %}
                     {% if episodie.english %}
-                    <button class="btn" role="button" onclick="document.getElementById('video').src='{{ episodie.english }}'" style="background-color: #B39A27;">Inglés </button>
+                    <button class="btn" role="button"
+                        onclick="document.getElementById('video').src='{{ episodie.english }}'"
+                        style="background-color: #B39A27;">Inglés </button>
                     {% endif %}
                     {% if episodie.mediafire %}
-                    <a href={{ episodie.mediafire }} target="_blank" class="btn" role="button" style="background-color: #B39A27;">Descargar</a>
+                    <a href={{ episodie.mediafire }} target="_blank" class="btn" role="button"
+                        style="background-color: #B39A27;">Descargar</a>
                     {% endif %}
-                    <a href={% url 'caps:season' season.slug %} class="btn" role="button" style="background-color: #B39A27;">Volver a la temporada {{episodie.season}}</a>
+                    <a href={% url 'caps:season' season.slug %} class="btn" role="button"
+                        style="background-color: #B39A27;">Volver a la temporada {{episodie.season}}</a>
                 </div>
                 <br>
                 <div class="col-4 align-end">
-                        {% for tag in episodie.tags.all %}
-                        {% if forloop.counter|divisibleby:2 %}
-                        <a href="{% url 'caps:tagResult' tag %}" class="badge badge-primary">{{ tag }}</a>
-                        {% else %}
-                        <a href="{% url 'caps:tagResult' tag %}" class="badge badge-info">{{ tag }}</a>
-                        {% endif %}
-                        {% endfor %}
+                    {% for tag in episodie.tags.all %}
+                    {% if forloop.counter|divisibleby:2 %}
+                    <a href="{% url 'caps:tagResult' tag %}" class="badge badge-primary">{{ tag }}</a>
+                    {% else %}
+                    <a href="{% url 'caps:tagResult' tag %}" class="badge badge-info">{{ tag }}</a>
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -68,13 +77,16 @@
             Esucha el podcast de este episodio
         </h2>
         <!-- Search Widget -->
-        <iframe src="{{ episodie.spoty }}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe src="{{ episodie.spoty }}" width="300" height="380" frameborder="0" allowtransparency="true"
+            allow="encrypted-media"></iframe>
         {% else %}
         <h4 class="title text-center" style="color: #FFD929;text-shadow: 0 0 5px #000!important">
             Este episodio aún no tiene un podcast dedicado :(
         </h4>
         {% endif %}
-        <a class="twitter-timeline" data-lang="es" data-width="300" data-height="600" href="https://twitter.com/arnoldopodcast?ref_src=twsrc%5Etfw">Tweets by arnoldopodcast</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a class="twitter-timeline" data-lang="es" data-width="300" data-height="600"
+            href="https://twitter.com/arnoldopodcast?ref_src=twsrc%5Etfw">Tweets by arnoldopodcast</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 
 </div>

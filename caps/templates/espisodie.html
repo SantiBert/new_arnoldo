@@ -58,12 +58,19 @@
                         style="background-color: #B39A27;">Volver a la temporada {{episodie.season}}</a>
                 </div>
                 <br>
-                <div class="col-4 align-end">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="col-12 align-end">
                     {% for tag in episodie.tags.all %}
                     {% if forloop.counter|divisibleby:2 %}
-                    <a href="{% url 'caps:tagResult' tag %}" class="badge badge-primary">{{ tag }}</a>
+                    <a href="{% url 'caps:tagResult' tag %}" class="btn btn-primary" role="button">{{ tag }}</a>
                     {% else %}
-                    <a href="{% url 'caps:tagResult' tag %}" class="badge badge-info">{{ tag }}</a>
+                    <a href="{% url 'caps:tagResult' tag %}" class="btn btn-info" role="button">{{ tag }}</a>
                     {% endif %}
                     {% endfor %}
                 </div>

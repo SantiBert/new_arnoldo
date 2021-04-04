@@ -21,14 +21,30 @@ class SeasonView(View):
             season = Season.objects.get(slug=slug)
             episodies = Episodies.objects.filter(
                 season__name=season.name).order_by('ordering')
+            number_n = season.ordering + 1
+            number_s = season.ordering - 1
+            if number_s == 0:
+                number_s = 1
+            if number_n > 6:
+                number_n = 6
+            next_se = Season.objects.get(ordering=number_n)
+            prev_se = Season.objects.get(ordering=number_s)
+
         except:
+            socials = None
             season = None
             episodies = None
+            number_n = None
+            number_s = None
+            next_se = None
+            prev_se = None
 
         context = {
             "season": season,
             "episodies": episodies,
             "socials": socials,
+            "next_se": next_se,
+            "prev_se": prev_se,
         }
 
         return render(request, 'seasonlist.html', context)
@@ -85,7 +101,7 @@ class SeasonUpdateView(UpdateView):
     template_name_suffix = '_update_form'
     success_url = reverse_lazy('admin_caps:listSeason')
 
-#
+
 @method_decorator(login_required, name='dispatch')
 class ListSeasonAdminView(ListView):
     model = Season
@@ -131,16 +147,18 @@ class ListEpisodieAdminView(View):
 
         return render(request, 'admin/episodies_admin_list.html', context)
 
+
 class SearchTagView(View):
     def get(self, request, tag, *args, **kwargs):
         queryset = tag
         socials = Social.objects.all()
         seasons = Season.objects.filter(is_active=True)
         if queryset:
-            episodies = Episodies.objects.filter(tags__name__in=[tag],is_active=True).distinct().order_by('ordering')
+            episodies = Episodies.objects.filter(
+                tags__name__in=[tag], is_active=True).distinct().order_by('ordering')
         context = {
             "episodies": episodies,
-            "tag":queryset,
+            "tag": queryset,
         }
 
         return render(request, 'tagresult.html', context)

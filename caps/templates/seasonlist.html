@@ -3,6 +3,21 @@
 {% block title %}{{season.name}}{% endblock %}
 {% block name %}{{season.name}}{% endblock %}
 {% block background %}{{season.banner.url}} {% endblock %}
+{% block arrows %}
+{% if season.ordering != 1 %}
+<a href="{% url 'caps:season' prev_se.slug %}" class="carousel-control-prev" style="color:#FFD929;" role="button"
+    data-slide="prev">
+    <i class="now-ui-icons arrows-1_minimal-left"></i>Temporada anterior
+</a>
+{% endif %}
+{% if season.ordering != 6 %}
+<a href="{% url 'caps:season' next_se.slug %}" class="carousel-control-next" style="color:#FFD929;" role="button"
+    data-slide="next">
+    Siguiente temporada
+    <i class="now-ui-icons arrows-1_minimal-right"></i>
+</a>
+{% endif %}
+{% endblock %}
 {% block content %}
 {% if season.description %}
 <div class="row">

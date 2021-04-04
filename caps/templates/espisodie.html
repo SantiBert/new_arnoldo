@@ -3,6 +3,21 @@
 {% block title %}{{episodie.name}}{% endblock %}
 {% block name %}{{episodie.name}}{% endblock %}
 {% block background %} {{episodie.image.url}} {% endblock %}
+{% block arrows %}
+{% if episodie.ordering != 1 %}
+<a href="{% url 'caps:episodieDetail' prev_ep.slug %}" class="carousel-control-prev" style="color:#FFD929;"
+    role="button" data-slide="prev">
+    <i class="now-ui-icons arrows-1_minimal-left"></i>Capítulo Anterior
+</a>
+{% endif %}
+{% if episodie.ordering != 102 %}
+<a href="{% url 'caps:episodieDetail' next_ep.slug %}" class="carousel-control-next" style="color:#FFD929;"
+    role="button" data-slide="next">
+    Capítulo Siguiente
+    <i class="now-ui-icons arrows-1_minimal-right"></i>
+</a>
+{% endif %}
+{% endblock %}
 {% block content %}
 <div class="row">
     <div class="col-md-9 ml-auto mr-auto bg-white">
@@ -19,14 +34,6 @@
             </div>
         </div>
         <br>
-        {% if episodie.ordering != 1 %}
-        <a href="{% url 'caps:episodieDetail' prev_ep.slug %}" class="btn btn-primary btn-lg text-white" role="button">
-            Capítulo Anterior</a>
-        {% endif %}
-        {% if episodie.ordering != 102 %}
-        <a href="{% url 'caps:episodieDetail' next_ep.slug %}" class="btn btn-primary btn-lg text-white" role="button">
-            Capítulo Siguiente</a>
-        {% endif %}
         <div class="embed-responsive embed-responsive-16by9 card shadow mb-4">
             <iframe id="video" width="560" height="315" src="{{episodie.link1}}" title="" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

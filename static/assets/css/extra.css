@@ -51,3 +51,7 @@
 #arrow:hover {
     color: #FFD929 !important;
 }
+
+.page-header .page-header-image {
+    z-index: 0;
+}

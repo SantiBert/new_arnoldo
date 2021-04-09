@@ -10,27 +10,31 @@
         </h1>
     </div>
 </div>
-<div class="row">    
-    <div id='siderbar' class="col-3 d-md-block sidebar">
+<div class="row">
+    <div id='siderbar' class="col-3 ml-auto mr-auto d-none d-lg-block sidebar">
         <h4 class="title">
-        Esucha nuestro ultimo podcast
+            Esucha nuestro ultimo podcast
         </h4>
-        <iframe src="https://open.spotify.com/embed-podcast/show/5SgZv8DvbB7iUFXt4ZIeca" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe src="https://open.spotify.com/embed-podcast/show/5SgZv8DvbB7iUFXt4ZIeca" width="100%" height="232"
+            frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         <h5>
             Podés apoyar al podcast y ayudarnos a mantener la web invitandonos un mantecado
         </h5>
-        <a href='https://cafecito.app/elarnoldo' class='btn' style="background-color: #48b3e7;" role="button" rel='noopener' target='_blank'> ¡Apoyanos con un Mantecado!</a>
+        <a href='https://cafecito.app/elarnoldo' rel='noopener' target='_blank'><img
+                srcset='https://cdn.cafecito.app/imgs/buttons/button_6.png 1x, https://cdn.cafecito.app/imgs/buttons/button_6_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x'
+                src='https://cdn.cafecito.app/imgs/buttons/button_6.png' alt='Invitame un café en cafecito.app' /></a>
         {% if youtube.link %}
         <h4 class="title">
             Suscribite
         </h4>
-        <a href="{{youtube.link}}" target='_blank' class="btn btn-youtube btn-lg" role="button">YouTube</a>
+        <a href="{{youtube.link}}" target='_blank' class="btn btn-youtube btn-lg" role="button">
+            <i class="fab fa-youtube"></i> YouTube</a>
         {% endif %}
     </div>
-    <div class="col-9">
+    <div class="col-9 ml-auto mr-auto">
         <div class="row">
             {% for season in seasons %}
-            <div class="col-md-6">
+            <div class="col-md-6 mr-auto">
                 <div class="card">
                     <div class="overflow">
                         <a href="{% url 'caps:season' season.slug %}">

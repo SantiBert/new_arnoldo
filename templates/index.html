@@ -12,24 +12,33 @@
 </div>
 <div class="row">
     <div id='siderbar' class="col-3 ml-auto mr-auto d-none d-lg-block sidebar">
-        <h4 class="title">
-            Esucha nuestro ultimo podcast
-        </h4>
-        <iframe src="https://open.spotify.com/embed-podcast/show/5SgZv8DvbB7iUFXt4ZIeca" width="100%" height="232"
-            frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        <h5>
-            Podés apoyar al podcast y ayudarnos a mantener la web invitandonos un mantecado
-        </h5>
-        <a href='https://cafecito.app/elarnoldo' rel='noopener' target='_blank'><img
-                srcset='https://cdn.cafecito.app/imgs/buttons/button_6.png 1x, https://cdn.cafecito.app/imgs/buttons/button_6_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x'
-                src='https://cdn.cafecito.app/imgs/buttons/button_6.png' alt='Invitame un café en cafecito.app' /></a>
-        {% if youtube.link %}
-        <h4 class="title">
-            Suscribite
-        </h4>
-        <a href="{{youtube.link}}" target='_blank' class="btn btn-youtube btn-lg" role="button">
-            <i class="fab fa-youtube"></i> YouTube</a>
-        {% endif %}
+        <ul class="nav nav-pills nav-pills-info flex-column">
+            <li>
+                <h4 class="title">
+                    Esucha nuestro ultimo podcast
+                </h4>
+                <iframe src="https://open.spotify.com/embed-podcast/show/5SgZv8DvbB7iUFXt4ZIeca" width="100%"
+                    height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </li>
+            <li>
+                <h5>
+                    Podés apoyar al podcast y ayudarnos a mantener la web invitandonos un mantecado
+                </h5>
+                <a href='https://cafecito.app/elarnoldo' rel='noopener' target='_blank'><img
+                        srcset='https://cdn.cafecito.app/imgs/buttons/button_6.png 1x, https://cdn.cafecito.app/imgs/buttons/button_6_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x'
+                        src='https://cdn.cafecito.app/imgs/buttons/button_6.png'
+                        alt='Invitame un café en cafecito.app' /></a>
+            </li>
+            {% if youtube.link %}
+            <li>
+                <h4 class="title">
+                    Suscribite
+                </h4>
+                <a href="{{youtube.link}}" target='_blank' class="btn btn-youtube btn-lg" role="button">
+                    <i class="fab fa-youtube"></i> YouTube</a>
+            </li>
+            {% endif %}
+        </ul>
     </div>
     <div class="col-9 ml-auto mr-auto">
         <div class="row">

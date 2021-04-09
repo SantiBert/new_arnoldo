@@ -16,6 +16,7 @@ class IndexView(TemplateView):
         context['seasons'] = Season.objects.filter(
             is_active=True).order_by('ordering')
         context['socials'] = Social.objects.all()
+        context['youtube'] = Social.objects.get(name='Youtube')
         return context
 
 

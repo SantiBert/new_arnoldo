@@ -55,3 +55,22 @@
 .page-header .page-header-image {
     z-index: 0;
 }
+
+#siderbar h4{
+    color: #FFD929;
+    text-shadow: 0 0 5px #000!important;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#siderbar h5{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.icon {
+    background: url('../img/cafecito.ico');
+    height: 20px;
+    width: 20px;
+    display: block;
+}

@@ -15,8 +15,9 @@
         <ul class="nav nav-pills nav-pills-info flex-column">
             <li>
                 <h4 class="title">
-                    Esucha nuestro ultimo podcast
+                    Escuchá nuestro ultimo podcast
                 </h4>
+                <br>
                 <iframe src="https://open.spotify.com/embed-podcast/show/5SgZv8DvbB7iUFXt4ZIeca" width="100%"
                     height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
             </li>
@@ -25,9 +26,7 @@
                     Podés apoyar al podcast y ayudarnos a mantener la web invitandonos un mantecado
                 </h5>
                 <a href='https://cafecito.app/elarnoldo' rel='noopener' target='_blank'><img
-                        srcset='https://cdn.cafecito.app/imgs/buttons/button_6.png 1x, https://cdn.cafecito.app/imgs/buttons/button_6_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x'
-                        src='https://cdn.cafecito.app/imgs/buttons/button_6.png'
-                        alt='Invitame un café en cafecito.app' /></a>
+                        src="{% static './assets/img/button_1_2x.png' %}" alt='Invitame un café en cafecito.app' /></a>
             </li>
             {% if youtube.link %}
             <li>

@@ -23,10 +23,17 @@
             </li>
             <li>
                 <h5>
-                    Podés apoyar al podcast y ayudarnos a mantener la web invitandonos un mantecado
+                    Podés apoyar al podcast y ayudarnos a mantener la web invitandonos un mantecado o un ko-fi
                 </h5>
                 <a href='https://cafecito.app/elarnoldo' rel='noopener' target='_blank'><img
                         src="{% static './assets/img/button_1_2x.png' %}" alt='Invitame un café en cafecito.app' /></a>
+            </li>
+            <br>
+            <li>
+                <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+                <script
+                    type='text/javascript'>kofiwidget2.init('Mantecado en Ko-fi', '#00B4E9', 'A0A048LP8'); kofiwidget2.draw();</script>
+
             </li>
             {% if youtube.link %}
             <li>

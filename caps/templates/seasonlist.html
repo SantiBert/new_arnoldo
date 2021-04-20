@@ -35,7 +35,8 @@
             <div class="overflow">
                 <a href="{% url 'caps:episodieDetail' episodie.slug %}">
                     {% if episodie.image %}
-                    <img class="card-img-top" src="{{ episodie.image.url }}" width="350px" height="250px" alt="">
+                    <img class="card-img-top" src="{{ episodie.image.url }}" width="350px" height="250px"
+                        alt="{{ episodie.name }}">
                     {% else %}
                     <img src="{% static './assets/img/unset.jpg'%}" width="350px" height="350px" alt=""
                         class="card-img-top">
